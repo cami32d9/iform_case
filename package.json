@@ -1,0 +1,24 @@
+{
+  "name": "iform_case",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cami32d9/iform_case.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cami32d9/iform_case/issues"
+  },
+  "homepage": "https://github.com/cami32d9/iform_case#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.23.0"
+  }
+}
