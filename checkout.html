@@ -8,9 +8,10 @@
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.scss">
-    <title>Document</title>
+    <title>Checkout iFORM</title>
 </head>
 <body>
+    <form>
     <section class="checkout-step" id="select_offer">
         <b>
             Select offer section
@@ -20,18 +21,91 @@
         <b>
             Personal information section
         </b>
+
+        <h2>Kundeoplysninger</h2>
+
+        <!-- FIRST NAME-->
+        <div class="input_field">
+            <label for="field-firstname" class="required">
+                Fornavn
+            </label>
+            <input type="text" name="details-firstname" id="field-firstname" placeholder="Dit fornavn" required>
+        </div>
+
+        <!-- LAST NAME -->
+        <div class="input_field">
+            <label for="field-lastname" class="required">
+                Efternavn
+            </label>
+            <input type="text" name="details-lastname" id="field-lastname" placeholder="Dit efternavn" required>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="input_field">
+            <label for="field-address" class="required">
+                Adresse
+            </label>
+            <input type="text" name="details-address" id="field-address" placeholder="Din adresse" required>
+        </div>
+
+        <div class="city">
+        <!-- ZIP CODE -->
+        <div class="input_field">
+            <label for="field-zip" class="required">
+                Postnr.
+            </label>
+            <input type="text" name="details-zip" id="field-zip" placeholder="Dit postnummer" minlength="4" maxlength="4" size="10" pattern="[0-9]*" required>
+        </div>
+
+        <!-- CITY -->
+        <div class="input_field">
+            <label for="field-city" class="required">
+                By
+            </label>
+            <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
+        </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="input_field">
+            <label for="field-email" class="required">
+                Email
+            </label>
+            <input type="email" name="details-email" id="field-email" placeholder="Din email" required>
+        </div>
+
+        <!-- CONFIRM EMAIL -->
+        <div class="input_field">
+            <label for="field-confirm-email" class="required">
+                Bekræft email
+            </label>
+            <input type="text" name="details-confirm-email" id="field-confirm-email" placeholder="Gentag din email" required>
+        </div>
+
+        <!-- PHONE -->
+        <div class="input_field">
+            <label for="field-phone">
+                Telefonnr.
+            </label>
+            <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
+        </div>
+
+        <input type="submit">
+
     </section>
+
     <section class="checkout-step" id="payment">
-        <b>
-            Payment section
-        </b>
+        <h2>
+            Betalingsmetode
+        </h2>
     </section>
     <section class="checkout-step" id="go_to_checkout">
         <a href="thank-you.html">
-        <button>
-            Checkout
-        </button>
+            <button>
+                Checkout
+            </button>
         </a>
     </section>
+    </form>
 </body>
 </html>
