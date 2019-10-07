@@ -1,10 +1,5 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 $main_design_color: #68228b;
+$main_design_font: Arial, Helvetica, sans-serif;
 
 body {
   background-color: rgb(255, 255, 255);
@@ -27,7 +22,7 @@ header {
 
 main {
   h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $main_design_font;
     margin-left: 20px;
     font-size: large;
     margin-top: 35px;
@@ -48,7 +43,7 @@ main {
   margin-left: 35px;
   margin-right: 30px;
   padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $main_design_font;
   font-weight: 700;
   font-size: 17px;
 }
@@ -58,6 +53,7 @@ main {
 }
 
 #banner {
+  font-family: $main_design_font;
   display: flex;
   flex-direction: row;
 
@@ -79,6 +75,7 @@ main {
   width: 100%;
   flex-direction: column;
   p {
+    font-family: $main_design_font;
     color: black;
     font-size: 17px;
     margin-left: 45px;
@@ -96,10 +93,14 @@ main {
   color: $main_design_color;
 
   p {
+    font-family: $main_design_font;
     flex-direction: row;
-    margin-top: 60px;
-    margin-right: 25px;
-    font-size: 0.8em;
+    margin-top: 55px;
+    margin-right: 38px;
+    font-size: 0.7em;
+  }
+  .first {
+    margin-left: -15px;
   }
   img {
     width: 20px;
@@ -121,6 +122,7 @@ main {
   grid-column-start: 1;
   justify-self: start;
   z-index: 100;
+  font-family: $main_design_font;
 
   li {
     color: $main_design_color;
@@ -129,16 +131,18 @@ main {
     font-size: 0.5em;
     display: block;
     list-style: none;
+    margin-left: -35px;
   }
   ul {
     margin-top: 20vh;
   }
+
   #myLinks {
     overflow: hidden;
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(255, 255, 255);
     position: relative;
     width: 100vw;
-    height: 105vh;
+    height: 100vh;
     margin-left: -30px;
     margin-top: -5vh;
     z-index: 50;
@@ -188,7 +192,7 @@ body {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: 65px;
+  margin-top: 55px;
   padding: 16px;
   color: $main_design_color;
   font-weight: bold;
@@ -223,5 +227,179 @@ body {
   }
   to {
     left: 200px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .slideshow-container {
+    margin: 50px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 450px;
+  }
+  #banner #tilbud {
+    margin-top: 50px;
+  }
+  #listwrapper {
+    text-align: center;
+  }
+  #listwrapper p {
+    line-height: 40px;
+  }
+  #listwrapper img {
+    margin-left: 150px;
+  }
+  #bestil {
+    margin-left: 250px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 140px;
+    margin-right: 150px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .slideshow-container {
+    margin: 50px;
+    width: 100vw;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 650px;
+  }
+  #banner #tilbud {
+    margin-top: 50px;
+  }
+  #listwrapper {
+    text-align: center;
+  }
+  #listwrapper p {
+    line-height: 25px;
+    font-size: 1em;
+  }
+  #listwrapper img {
+    margin-left: 200px;
+    width: 50px;
+  }
+  #bestil {
+    margin-left: 350px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .next,
+  .prev {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .slideshow-container {
+    margin-left: 100px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 450px;
+    margin-top: 80px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 800px;
+  }
+  .next,
+  .prev {
+    margin-top: 130px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .slideshow-container {
+    margin-left: 150px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 500px;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .slideshow-container {
+    margin-left: 200px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 550px;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .slideshow-container {
+    margin-left: 250px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 600px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 530px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .slideshow-container img {
+    min-width: 1300px;
+    min-height: 500px;
+    margin-left: -100px;
+  }
+  #bestil {
+    margin-left: 650px;
+    margin-top: 80px;
+  }
+  .next,
+  .prev {
+    font-size: 2em;
+    margin-top: 220px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 1500px;
+  }
+  main h1 {
+    margin-left: 350px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .slideshow-container {
+    margin-left: 350px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 700px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .slideshow-container {
+    margin-left: 400px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 750px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .slideshow-container {
+    margin-left: 450px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 800px;
+    margin-top: 80px;
   }
 }
