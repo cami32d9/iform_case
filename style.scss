@@ -42,9 +42,45 @@ input {
 }
 
 
+.payment-option {
+  display: grid;
+  grid: auto / auto 1fr;
+  place-items: center start;
+  gap: 10px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 2px solid #222;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+input[type="radio"]:checked::after {
+  width: 0.7rem;
+  height: 0.7rem;
+  background: #0c4364;
+  border-radius: 50%;
+  content: "";
+}
+
+
+
 
 
 // ----- Temporary styling -----
+
+
+body {
+  display: grid;
+  place-items: center;
+}
 
 section {
   margin: 50px 0;
