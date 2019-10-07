@@ -1,16 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta
-        name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.scss">
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.scss" />
     <title>Document</title>
-</head>
-<body>
-    Hi, I'm a website!
-</body>
+  </head>
+  <body>
+    <header>
+      <nav id="burgermenu">
+        <img src="assets/burgericon.svg" id="burgericon" />
+      </nav>
+      <a href="#0">
+        <img
+          id="logo"
+          src="https://bonnier-magazine-shop-media.interactives.dk/uploads/2017/03/logo_sv-b08af46f9c2143930c4b48b0e8cf44c7e2ad45da4d6327f9c628f6090db00fc9.png"
+          alt="logo"
+        />
+      </a>
+
+      <div id="subnav">
+            <p class="first">
+             <img src="assets/checkmark_purple.svg" alt="checkmark_purple"> 14 dages fortrydelsesret
+            </p>
+            <p class="second">
+            <img src="assets/checkmark_purple.svg" alt="checkmark_purple"> Ingen binding
+            </p>
+
+    </header>
+    <main>
+
+<h1 id="landing_h1">4 nr. af I Form<br>+ ActiveFit fiberjakke</h1>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">        
+<img src="assets/slide_1.jpg" style="height: 200px; width: 100%;">
+</div>
+            
+<div class="mySlides fade">
+<img src="assets/slide_2.jpg" style="height: 200px; width: 100%;">
+</div>
+            
+ <div class="mySlides fade">
+<img src="assets/slide_3.jpg" style="height: 200px; width: 100%;">
+</div>
+
+ <div class="mySlides fade">
+<img src="assets/slide_4.jpg" style="height: 200px; width: 100%;">
+ </div>
+
+<div class="mySlides fade">
+<img src="assets/slide_5.jpg" style="height: 200px; width: 100%;">
+ </div>
+
+<div class="mySlides fade">
+<img src="assets/slide_6.jpg" style="height: 200px; width: 100%;">
+</div>
+            </div>
+            <br>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+
+            <div style="text-align:center; margin-top: -30px;">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+
+    <section id="content">
+            <p id="pris">149kr</p><p id="tilbud">Spar 761kr!</p>
+    </section>
+
+    <button id="bestil">Bestil nu</button>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
