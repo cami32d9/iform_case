@@ -3,60 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta
-        name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.scss">
     <title>Checkout iFORM</title>
 </head>
 <body>
-    <form>
-        <section class="checkout-step" id="select_offer">
-            <h2>
-                Vælg tilbud
-            </h2>
 
-            <div class="select-item">
-                <img src="https://placehold.it/150x200">
-            </div>
+<div class="checkout-progress">------------------------------</div>
 
-        </section>
-        <section class="checkout-step" id="personal_information">
+<form>
+    <section class="checkout-step" id="basket">
 
-            <h2>Kundeoplysninger</h2>
-
-            <!-- FIRST NAME-->
-            <div class="input_field">
-                <label for="field-firstname" class="required">
-                    Fornavn
+        <div class="select-item">
+            <img src="assets/jacket_offer.jpg" alt="Billede af ActiveFit Fiberjakke, som indgår i tilbudet.">
+            <div class="select-item-details">
+                <h2>ActiveFit Fiberjakke</h2>
+                <label>
+                    Vælg størrelse:
+                    <select>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
                 </label>
-                <input type="text" name="details-firstname" id="field-firstname" placeholder="Dit fornavn" required>
             </div>
+        </div>
 
-            <!-- LAST NAME -->
-            <div class="input_field">
-                <label for="field-lastname" class="required">
-                    Efternavn
+        <div class="select-magazines">
+
+            <label class="required">Vælg antal magasiner</label>
+            <br>
+            <b>Vælg flere numre og spar mere!</b>
+            <p>Jo flere numre du køber, jo flere numre får du til under halv pris.</p>
+
+            <div class="radio-option magazines">
+                <input type="radio" id="field-magazines-1" name="magazines" value="magazines-1" required>
+                <label for="field-magazines-1">
+                    <div class="magazine-count">
+                        4 nr for 149 kr.
+                    </div>
+                    <div class="magazine-savings">
+                        Spar 761 kr.
+                    </div>
                 </label>
-                <input type="text" name="details-lastname" id="field-lastname" placeholder="Dit efternavn" required>
             </div>
 
-            <!-- ADDRESS -->
-            <div class="input_field">
-                <label for="field-address" class="required">
-                    Adresse
+            <div class="radio-option magazines">
+                <input type="radio" id="field-magazines-2" name="magazines" value="magazines-2" required>
+                <label for="field-magazines-2">
+                    <div class="magazine-count">
+                        6 nr for 199 kr.
+                    </div>
+                    <div class="magazine-savings">
+                        Spar 866 kr.
+                    </div>
                 </label>
-                <input type="text" name="details-address" id="field-address" placeholder="Din adresse" required>
             </div>
 
-            <div class="city">
-                <!-- ZIP CODE -->
-                <div class="input_field">
-                    <label for="field-zip" class="required">
-                        Postnr.
-                    </label>
-                    <input
+            <div class="radio-option magazines">
+                <input type="radio" id="field-magazines-3" name="magazines" value="magazines-3" required>
+                <label for="field-magazines-3">
+                    <div class="magazine-count">
+                        8 nr for 299 kr.
+                    </div>
+                    <div class="magazine-savings">
+                        Spar 921 kr.
+                    </div>
+                </label>
+            </div>
+
+        </div>
+
+        <div class="offer-price">
+            Din pris: 487 kr.
+        </div>
+
+        <button class="forward" data-goto="personal-information">Videre til bestilling</button>
+
+    </section>
+    <section class="checkout-step hidden" id="personal-information">
+
+        <h2>Kundeoplysninger</h2>
+
+        <!-- FIRST NAME-->
+        <div class="input_field">
+            <label for="field-firstname" class="required">
+                Fornavn
+            </label>
+            <input
+                    type="text"
+                    name="details-firstname"
+                    id="field-firstname"
+                    placeholder="Dit fornavn"
+                    required
+            >
+        </div>
+
+        <!-- LAST NAME -->
+        <div class="input_field">
+            <label for="field-lastname" class="required">
+                Efternavn
+            </label>
+            <input
+                    type="text"
+                    name="details-lastname"
+                    id="field-lastname"
+                    placeholder="Dit efternavn"
+                    required
+            >
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="input_field">
+            <label for="field-address" class="required">
+                Adresse
+            </label>
+            <input
+                    type="text"
+                    name="details-address"
+                    id="field-address"
+                    placeholder="Din adresse"
+                    required
+            >
+        </div>
+
+        <div class="flex-right">
+            <!-- ZIP CODE -->
+            <div class="input_field">
+                <label for="field-zip" class="required">
+                    Postnr.
+                </label>
+                <input
                         type="text"
                         name="details-zip"
                         id="field-zip"
@@ -66,133 +147,137 @@
                         size="10"
                         pattern="[0-9]*"
                         required
-                    >
-                </div>
-
-                <!-- CITY -->
-                <div class="input_field">
-                    <label for="field-city" class="required">
-                        By
-                    </label>
-                    <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
-                </div>
+                >
             </div>
 
-            <!-- EMAIL -->
+            <!-- CITY -->
             <div class="input_field">
-                <label for="field-email" class="required">
-                    Email
+                <label for="field-city" class="required">
+                    By
                 </label>
-                <input type="email" name="details-email" id="field-email" placeholder="Din email" required>
+                <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
             </div>
+        </div>
 
-            <!-- CONFIRM EMAIL -->
-            <div class="input_field">
-                <label for="field-confirm-email" class="required">
-                    Bekræft email
-                </label>
-                <input
+        <!-- EMAIL -->
+        <div class="input_field">
+            <label for="field-email" class="required">
+                Email
+            </label>
+            <input type="email" name="details-email" id="field-email" placeholder="Din email" required>
+        </div>
+
+        <!-- CONFIRM EMAIL -->
+        <div class="input_field">
+            <label for="field-confirm-email" class="required">
+                Bekræft email
+            </label>
+            <input
                     type="email"
                     name="details-confirm-email"
                     id="field-confirm-email"
                     placeholder="Gentag din email"
                     required
-                >
-            </div>
+            >
+        </div>
 
-            <!-- PHONE -->
-            <div class="input_field">
-                <label for="field-phone">
-                    Telefonnr.
-                </label>
-                <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
-            </div>
+        <!-- PHONE -->
+        <div class="input_field">
+            <label for="field-phone">
+                Telefonnr.
+            </label>
+            <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
+        </div>
 
-            <input type="submit">
+        <button class="forward" data-goto="payment-method">Vælg betalingsmetode</button>
 
-        </section>
-        <section class="checkout-step" id="payment-method">
-            <h2>
-                Betalingsmetode
-            </h2>
+    </section>
+    <section class="checkout-step hidden" id="payment-method">
+        <h2>
+            Betalingsmetode
+        </h2>
 
-            <div class="payment-option">
-                <input type="radio" id="field-payment-1" name="payment" value="payment-1" required>
-                <label for="field-payment-1">
-                    Visa/Dankort
-                </label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" id="field-payment-2" name="payment" value="payment-2" required>
-                <label for="field-payment-2">
-                    Kreditkort
-                </label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" id="field-payment-3" name="payment" value="payment-3" required>
-                <label for="field-payment-3">
-                    MobilePay
-                </label>
-            </div>
-            <div class="payment-option">
-                <input type="radio" id="field-payment-4" name="payment" value="payment-4" required>
-                <label for="field-payment-4">
-                    Girokort (+ 15 kr)
-                </label>
-            </div>
+        <label class="required">Vælg betalingsmetode</label>
+        <div class="radio-option">
+            <input type="radio" id="field-payment-1" name="payment" value="payment-1" required>
+            <label for="field-payment-1">
+                Visa/Dankort
+            </label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="field-payment-2" name="payment" value="payment-2" required>
+            <label for="field-payment-2">
+                Kreditkort
+            </label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="field-payment-3" name="payment" value="payment-3" required>
+            <label for="field-payment-3">
+                MobilePay
+            </label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="field-payment-4" name="payment" value="payment-4" required>
+            <label for="field-payment-4">
+                Girokort (+ 15 kr)
+            </label>
+        </div>
 
-            <div class="payment-term">
-                <input type="checkbox" id="field-payment-term-1" name="payment-term-1" value="payment-term-1" required>
-                <label for="field-payment-term-1" class="checkbox">
-                    Jeg har læst og accepteret vilkår for kortbetaling
-                </label>
-                <a href="#">Betingelser</a>
-            </div>
-            <div class="payment-term">
-                <input type="checkbox" id="field-payment-term-2" name="payment-term-2" value="payment-term-2" required>
-                <label for="field-payment-term-2" class="checkbox">
-                    Jeg har læst og accepteret abonnementsbetingelserne
-                </label>
-                <a href="#">Læs mere</a>
-            </div>
-            <div class="payment-term">
-                <input type="checkbox" id="field-payment-term-3" name="payment-term-3" value="payment-term-3">
-                <label for="field-payment-term-3" class="checkbox">
-                    Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig & Livsstil,
-                    Sport
-                    & Fritid, Rejser, Mode & Skønhed, Dagligvarer, Events, Analyser og Spil via brev, telefon og andre
-                    elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid
-                    afmelde dig direkte markedsføring.
-                </label>
-                <a href="#">Læs mere</a>
-            </div>
+        <div class="payment-term">
+            <input type="checkbox" id="field-payment-term-1" name="payment-term-1" value="payment-term-1" required>
+            <label for="field-payment-term-1" class="checkbox">
+                Jeg har læst og accepteret vilkår for kortbetaling
+            </label>
+            <a href="#">Betingelser</a>
+        </div>
+        <div class="payment-term">
+            <input type="checkbox" id="field-payment-term-2" name="payment-term-2" value="payment-term-2" required>
+            <label for="field-payment-term-2" class="checkbox">
+                Jeg har læst og accepteret abonnementsbetingelserne
+            </label>
+            <a href="#">Læs mere</a>
+        </div>
+        <div class="payment-term">
+            <input type="checkbox" id="field-payment-term-3" name="payment-term-3" value="payment-term-3">
+            <label for="field-payment-term-3" class="checkbox">
+                Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig & Livsstil,
+                Sport
+                & Fritid, Rejser, Mode & Skønhed, Dagligvarer, Events, Analyser og Spil via brev, telefon og andre
+                elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid
+                afmelde dig direkte markedsføring.
+            </label>
+            <a href="#">Læs mere</a>
+        </div>
 
-        </section>
-        <section class="checkout-step" id="card-payment">
-            <!-- SELECT CARD TYPE -->
 
-            <!-- CARD HOLDER -->
-            <div class="input_field">
-                <label for="field-cardholder" class="required">
-                    Hortholders navn
-                </label>
-                <input
+        <button class="forward" data-goto="card-payment">Videre til betaling</button>
+
+    </section>
+    <section class="checkout-step hidden" id="card-payment">
+        <!-- SELECT CARD TYPE -->
+
+        <!-- CARD HOLDER -->
+        <div class="input_field">
+            <label for="field-cardholder" class="required">
+                Hortholders navn
+            </label>
+            <input
                     type="text"
                     name="details-cardholder"
                     id="field-cardholder"
                     placeholder="Kortholders navn"
                     required
-                >
-            </div>
+            >
+        </div>
 
 
-            <div class="card">
-                <!-- CARD NUMBER -->
-                <div class="input_field">
-                    <label for="field-cardnumber" class="required">
-                        Kortnummer
-                    </label>
-                    <input
+        <div class="flex-left">
+            <!-- CARD NUMBER -->
+            <div class="input_field">
+                <label for="field-cardnumber" class="required">
+                    Kortnummer
+                </label>
+                <input
                         type="text"
                         name="details-cardnumber"
                         id="field-cardnumber"
@@ -202,15 +287,15 @@
                         size="16"
                         pattern="[0-9]*"
                         required
-                    >
-                </div>
+                >
+            </div>
 
-                <!-- CARD CVV -->
-                <div class="input_field">
-                    <label for="field-cvv" class="required">
-                        Kontrolcifre
-                    </label>
-                    <input
+            <!-- CARD CVV -->
+            <div class="input_field">
+                <label for="field-cvv" class="required">
+                    Kontrolcifre
+                </label>
+                <input
                         type="text"
                         name="details-cvv"
                         id="field-cvv"
@@ -220,50 +305,49 @@
                         size="3"
                         pattern="[0-9]*"
                         required
-                    >
-                </div>
+                >
             </div>
+        </div>
 
-            <div class="dropdown">
-                <label>
-                    Udløbsdato
-                    <select>
-                        <option value="16"> 2019</option>
-                        <option value="17"> 2020</option>
-                        <option value="18"> 2021</option>
-                        <option value="19"> 2022</option>
-                        <option value="20"> 2023</option>
-                        <option value="21"> 2024</option>
-                        <option value="21"> 2025</option>
-                    </select>
-                    /
-                    <select>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-                </label>
-            </div>
+        <div class="dropdown">
+            <label>
+                Udløbsdato:
+                <select>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                /
+                <select>
+                    <option value="19">2019</option>
+                    <option value="20">2020</option>
+                    <option value="21">2021</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                </select>
 
-            <!--            === -->
+            </label>
+        </div>
 
-        </section>
-        <section class="checkout-step" id="final-payment">
-            <a href="thank-you.html">
-                <button>
-                    Checkout
-                </button>
-            </a>
-        </section>
-    </form>
+            <button class="forward" data-goto="thankyou">
+                    Bekræft betaling
+            </button>
+
+    </section>
+</form>
+
+<script src="script.js"></script>
+
 </body>
 </html>
