@@ -12,171 +12,258 @@
 </head>
 <body>
     <form>
-    <section class="checkout-step" id="select_offer">
-        <b>
-            Select offer section
-        </b>
-    </section>
-    <section class="checkout-step" id="personal_information">
+        <section class="checkout-step" id="select_offer">
+            <h2>
+                Vælg tilbud
+            </h2>
 
-        <h2>Kundeoplysninger</h2>
-
-        <!-- FIRST NAME-->
-        <div class="input_field">
-            <label for="field-firstname" class="required">
-                Fornavn
-            </label>
-            <input type="text" name="details-firstname" id="field-firstname" placeholder="Dit fornavn" required>
-        </div>
-
-        <!-- LAST NAME -->
-        <div class="input_field">
-            <label for="field-lastname" class="required">
-                Efternavn
-            </label>
-            <input type="text" name="details-lastname" id="field-lastname" placeholder="Dit efternavn" required>
-        </div>
-
-        <!-- ADDRESS -->
-        <div class="input_field">
-            <label for="field-address" class="required">
-                Adresse
-            </label>
-            <input type="text" name="details-address" id="field-address" placeholder="Din adresse" required>
-        </div>
-
-        <div class="city">
-        <!-- ZIP CODE -->
-        <div class="input_field">
-            <label for="field-zip" class="required">
-                Postnr.
-            </label>
-            <input type="text" name="details-zip" id="field-zip" placeholder="Dit postnummer" minlength="4" maxlength="4" size="10" pattern="[0-9]*" required>
-        </div>
-
-        <!-- CITY -->
-        <div class="input_field">
-            <label for="field-city" class="required">
-                By
-            </label>
-            <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
-        </div>
-        </div>
-
-        <!-- EMAIL -->
-        <div class="input_field">
-            <label for="field-email" class="required">
-                Email
-            </label>
-            <input type="email" name="details-email" id="field-email" placeholder="Din email" required>
-        </div>
-
-        <!-- CONFIRM EMAIL -->
-        <div class="input_field">
-            <label for="field-confirm-email" class="required">
-                Bekræft email
-            </label>
-            <input type="email" name="details-confirm-email" id="field-confirm-email" placeholder="Gentag din email" required>
-        </div>
-
-        <!-- PHONE -->
-        <div class="input_field">
-            <label for="field-phone">
-                Telefonnr.
-            </label>
-            <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
-        </div>
-
-        <input type="submit">
-
-    </section>
-
-    <section class="checkout-step" id="payment">
-        <h2>
-            Betalingsmetode
-        </h2>
-
-                <div class="payment-option">
-                    <input type="radio" id="field-payment-1" name="payment" value="payment-1" required>
-                    <label for="field-payment-1">
-                        Visa/Dankort
-                    </label>
-                </div>
-                <div class="payment-option">
-                    <input type="radio" id="field-payment-2" name="payment" value="payment-2" required>
-                    <label for="field-payment-2">
-                        Kreditkort
-                    </label>
-                </div>
-                <div class="payment-option">
-                    <input type="radio" id="field-payment-3" name="payment" value="payment-3" required>
-                    <label for="field-payment-3">
-                        MobilePay
-                    </label>
-                </div>
-                <div class="payment-option">
-                    <input type="radio" id="field-payment-4" name="payment" value="payment-4" required>
-                    <label for="field-payment-4">
-                        Girokort (+ 15 kr)
-                    </label>
-                </div>
-
-        <div class="payment-term">
-            <input type="checkbox" id="field-payment-term-1" name="payment-term-1" value="payment-term-1" required>
-            <label for="field-payment-term-1" class="checkbox">
-                Jeg har læst og accepteret vilkår for kortbetaling
-            </label>
-            <a href="#">Betingelser</a>
-        </div>
-        <div class="payment-term">
-            <input type="checkbox" id="field-payment-term-2" name="payment-term-2" value="payment-term-2" required>
-            <label for="field-payment-term-2" class="checkbox">
-                Jeg har læst og accepteret abonnementsbetingelserne
-            </label>
-            <a href="#">Læs mere</a>
-        </div>
-        <div class="payment-term">
-            <input type="checkbox" id="field-payment-term-3" name="payment-term-3" value="payment-term-3">
-            <label for="field-payment-term-3" class="checkbox">
-                Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig & Livsstil, Sport
-                & Fritid, Rejser, Mode & Skønhed, Dagligvarer, Events, Analyser og Spil via brev, telefon og andre
-                elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid
-                afmelde dig direkte markedsføring.
-            </label>
-            <a href="#">Læs mere</a>
-        </div>
-
-    </section>
-
-        <section class="checkout-step" id="card-payment">
-            <!-- SELECT CARD TYPE -->
-
-            <!-- CARD NUMBER -->
-            <div class="input_field">
-                <label for="field-cardnumber" class="required">
-                    Kortnummer
-                </label>
-                <input type="text" name="details-cardnumber" id="field-cardnumber" placeholder="Kortnummer" required>
-            </div>
-
-            <!-- CARD NUMBER -->
-            <div class="input_field">
-                <label for="field-expiration-month" class="required">
-                    Udløbsmåned
-                </label>
-                <select name="details-expiration-month" id="field-expiration-month" required>
-                <option value="17">17</option>
+            <div class="select-item">
+                <img src="https://placehold.it/150x200">
             </div>
 
         </section>
+        <section class="checkout-step" id="personal_information">
 
-    <section class="checkout-step" id="final-payment">
-        <a href="thank-you.html">
-            <button>
-                Checkout
-            </button>
-        </a>
-    </section>
+            <h2>Kundeoplysninger</h2>
+
+            <!-- FIRST NAME-->
+            <div class="input_field">
+                <label for="field-firstname" class="required">
+                    Fornavn
+                </label>
+                <input type="text" name="details-firstname" id="field-firstname" placeholder="Dit fornavn" required>
+            </div>
+
+            <!-- LAST NAME -->
+            <div class="input_field">
+                <label for="field-lastname" class="required">
+                    Efternavn
+                </label>
+                <input type="text" name="details-lastname" id="field-lastname" placeholder="Dit efternavn" required>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="input_field">
+                <label for="field-address" class="required">
+                    Adresse
+                </label>
+                <input type="text" name="details-address" id="field-address" placeholder="Din adresse" required>
+            </div>
+
+            <div class="city">
+                <!-- ZIP CODE -->
+                <div class="input_field">
+                    <label for="field-zip" class="required">
+                        Postnr.
+                    </label>
+                    <input
+                        type="text"
+                        name="details-zip"
+                        id="field-zip"
+                        placeholder="Dit postnummer"
+                        minlength="4"
+                        maxlength="4"
+                        size="10"
+                        pattern="[0-9]*"
+                        required
+                    >
+                </div>
+
+                <!-- CITY -->
+                <div class="input_field">
+                    <label for="field-city" class="required">
+                        By
+                    </label>
+                    <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
+                </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="input_field">
+                <label for="field-email" class="required">
+                    Email
+                </label>
+                <input type="email" name="details-email" id="field-email" placeholder="Din email" required>
+            </div>
+
+            <!-- CONFIRM EMAIL -->
+            <div class="input_field">
+                <label for="field-confirm-email" class="required">
+                    Bekræft email
+                </label>
+                <input
+                    type="email"
+                    name="details-confirm-email"
+                    id="field-confirm-email"
+                    placeholder="Gentag din email"
+                    required
+                >
+            </div>
+
+            <!-- PHONE -->
+            <div class="input_field">
+                <label for="field-phone">
+                    Telefonnr.
+                </label>
+                <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
+            </div>
+
+            <input type="submit">
+
+        </section>
+        <section class="checkout-step" id="payment-method">
+            <h2>
+                Betalingsmetode
+            </h2>
+
+            <div class="payment-option">
+                <input type="radio" id="field-payment-1" name="payment" value="payment-1" required>
+                <label for="field-payment-1">
+                    Visa/Dankort
+                </label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="field-payment-2" name="payment" value="payment-2" required>
+                <label for="field-payment-2">
+                    Kreditkort
+                </label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="field-payment-3" name="payment" value="payment-3" required>
+                <label for="field-payment-3">
+                    MobilePay
+                </label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="field-payment-4" name="payment" value="payment-4" required>
+                <label for="field-payment-4">
+                    Girokort (+ 15 kr)
+                </label>
+            </div>
+
+            <div class="payment-term">
+                <input type="checkbox" id="field-payment-term-1" name="payment-term-1" value="payment-term-1" required>
+                <label for="field-payment-term-1" class="checkbox">
+                    Jeg har læst og accepteret vilkår for kortbetaling
+                </label>
+                <a href="#">Betingelser</a>
+            </div>
+            <div class="payment-term">
+                <input type="checkbox" id="field-payment-term-2" name="payment-term-2" value="payment-term-2" required>
+                <label for="field-payment-term-2" class="checkbox">
+                    Jeg har læst og accepteret abonnementsbetingelserne
+                </label>
+                <a href="#">Læs mere</a>
+            </div>
+            <div class="payment-term">
+                <input type="checkbox" id="field-payment-term-3" name="payment-term-3" value="payment-term-3">
+                <label for="field-payment-term-3" class="checkbox">
+                    Ja tak, jeg vil gerne modtage spændende nyhedsbreve og tilbud om Medieprodukter, Bolig & Livsstil,
+                    Sport
+                    & Fritid, Rejser, Mode & Skønhed, Dagligvarer, Events, Analyser og Spil via brev, telefon og andre
+                    elektroniske medier f.eks e-mail og sms fra Bonnier Publications Koncernen. Du kan til hver en tid
+                    afmelde dig direkte markedsføring.
+                </label>
+                <a href="#">Læs mere</a>
+            </div>
+
+        </section>
+        <section class="checkout-step" id="card-payment">
+            <!-- SELECT CARD TYPE -->
+
+            <!-- CARD HOLDER -->
+            <div class="input_field">
+                <label for="field-cardholder" class="required">
+                    Hortholders navn
+                </label>
+                <input
+                    type="text"
+                    name="details-cardholder"
+                    id="field-cardholder"
+                    placeholder="Kortholders navn"
+                    required
+                >
+            </div>
+
+
+            <div class="card">
+                <!-- CARD NUMBER -->
+                <div class="input_field">
+                    <label for="field-cardnumber" class="required">
+                        Kortnummer
+                    </label>
+                    <input
+                        type="text"
+                        name="details-cardnumber"
+                        id="field-cardnumber"
+                        placeholder="Kortnummer"
+                        minlength="16"
+                        maxlength="16"
+                        size="16"
+                        pattern="[0-9]*"
+                        required
+                    >
+                </div>
+
+                <!-- CARD CVV -->
+                <div class="input_field">
+                    <label for="field-cvv" class="required">
+                        Kontrolcifre
+                    </label>
+                    <input
+                        type="text"
+                        name="details-cvv"
+                        id="field-cvv"
+                        placeholder="Kontrolcifre"
+                        minlength="3"
+                        maxlength="3"
+                        size="3"
+                        pattern="[0-9]*"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <label>
+                    Udløbsdato
+                    <select>
+                        <option value="16"> 2019</option>
+                        <option value="17"> 2020</option>
+                        <option value="18"> 2021</option>
+                        <option value="19"> 2022</option>
+                        <option value="20"> 2023</option>
+                        <option value="21"> 2024</option>
+                        <option value="21"> 2025</option>
+                    </select>
+                    /
+                    <select>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </label>
+            </div>
+
+            <!--            === -->
+
+        </section>
+        <section class="checkout-step" id="final-payment">
+            <a href="thank-you.html">
+                <button>
+                    Checkout
+                </button>
+            </a>
+        </section>
     </form>
 </body>
 </html>

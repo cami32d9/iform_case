@@ -24,6 +24,15 @@ label.required:after {
   }
 }
 
+.card {
+  display: flex;
+
+  .input_field:first-child {
+    margin-right: 10px;
+    flex: 1;
+  }
+}
+
 input {
   border: 1px solid blue;
 
