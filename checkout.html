@@ -82,7 +82,7 @@
             Din pris: 487 kr.
         </div>
 
-        <button class="forward" data-goto="personal-information">Videre til bestilling</button>
+        <button class="checkout-button forward" data-goto="personal-information">Videre til bestilling</button>
 
     </section>
     <section class="checkout-step hidden" id="personal-information">
@@ -186,10 +186,14 @@
             <label for="field-phone">
                 Telefonnr.
             </label>
-            <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer">
+            <input type="text" name="details-phone" id="field-phone" placeholder="Dit telefonnummer"
+                   minlength="8"
+                   maxlength="8"
+                   pattern="[0-9]*">
         </div>
 
-        <button class="forward" data-goto="payment-method">Vælg betalingsmetode</button>
+        <button class="checkout-button forward" data-goto="payment-method">Vælg betalingsmetode</button>
+        <button class="checkout-button back" data-goto="basket">Gå tilbage</button>
 
     </section>
     <section class="checkout-step hidden" id="payment-method">
@@ -250,7 +254,8 @@
         </div>
 
 
-        <button class="forward" data-goto="card-payment">Videre til betaling</button>
+        <button class="checkout-button forward" data-goto="card-payment">Videre til betaling</button>
+        <button class="checkout-button back" data-goto="personal-information">Gå tilbage</button>
 
     </section>
     <section class="checkout-step hidden" id="card-payment">
@@ -340,9 +345,10 @@
             </label>
         </div>
 
-            <button class="forward" data-goto="thankyou">
+            <button class="checkout-button forward" data-goto="thankyou">
                     Bekræft betaling
             </button>
+        <button class="checkout-button back" data-goto="payment-method">Gå tilbage</button>
 
     </section>
 </form>
