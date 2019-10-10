@@ -1,4 +1,7 @@
 $iform-color: #5C1182;
+$main_design_color: #68228b;
+$main_design_font: Arial, Helvetica, sans-serif;
+
 
 html {
   font-family: sans-serif;
@@ -6,14 +9,47 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  //margin: 0;
+  //padding: 20px;
+  //display: grid;
+  //place-items: center;
+}
+
+header {
   display: grid;
-  place-items: center;
+  grid: auto / 1fr auto 1fr;
+  align-items: center;
+  padding: 12px 12px 60px 30px;
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
+  box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
+  margin-top: 0px;
+  z-index: 100;
+  a {
+    justify-self: center;
+    grid-column: 2;
+  }
+}
+
+.burgermenu li:hover {
+  color: rgb(167, 101, 150);
+  cursor: pointer;
+}
+
+.burgermenu #myLinks {
+  display: none;
 }
 
 main {
-  width: 100%;
+  //width: 100%;
+
+  #landing_h1 {
+    font-family: $main_design_font;
+    margin-left: 20px;
+    font-size: 1em;
+    margin-top: 35px;
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -305,6 +341,393 @@ button {
   padding: 20px 5px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+
+// ----- Landingpage -----
+#bestil {
+  background-color: $main_design_color;
+  color: white;
+  border: none;
+  width: 300px;
+  text-align: center;
+  margin-top: -5px;
+  margin-left: 35px;
+  margin-right: 30px;
+  padding: 20px;
+  font-family: $main_design_font;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 2px;
+
+  img {
+    width: 25px;
+    float: right;
+  }
+  p {
+    margin-top: 5px;
+  }
+}
+
+#bestil:hover {
+  cursor: pointer;
+}
+
+#banner {
+  font-family: $main_design_font;
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  font-weight: 700;
+
+  #pris {
+    color: #f36;
+    margin-left: 40px;
+    margin-right: 75px;
+  }
+  #tilbud {
+    margin-left: 95px;
+    color: rgb(14, 212, 14);
+  }
+}
+
+#listwrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  p {
+    font-family: $main_design_font;
+    color: black;
+    font-size: 17px;
+    margin-left: 45px;
+    margin-top: -40px;
+  }
+  img {
+    width: 20px;
+    margin: 10px;
+  }
+}
+
+#subnav {
+  display: flex;
+  position: absolute;
+  color: $main_design_color;
+  margin-top: -10px;
+  p {
+    font-family: $main_design_font;
+    flex-direction: row;
+    margin-top: 55px;
+    margin-right: 38px;
+    font-size: 0.7em;
+  }
+  .first {
+    margin-left: -15px;
+  }
+  img {
+    width: 20px;
+  }
+}
+
+#burgericon {
+  position: absolute;
+  width: 45px;
+  height: auto;
+  top: 1.5vh;
+  z-index: 60;
+  margin-left: -15px;
+  margin-top: 10px;
+}
+
+.burgermenu {
+  color: $main_design_color;
+  font-size: 2rem;
+  line-height: 1;
+  grid-column-start: 1;
+  justify-self: start;
+  z-index: 100;
+  font-family: $main_design_font;
+
+  li {
+    color: $main_design_color;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 0.5em;
+    display: block;
+    list-style: none;
+    margin-left: -35px;
+  }
+  ul {
+    margin-top: 20vh;
+  }
+
+  #myLinks {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -30px;
+    margin-top: -5vh;
+    z-index: 50;
+  }
+}
+
+#logo {
+  margin-top: -25px;
+  width: 120px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+// Slideshow //
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.diamond_dot {
+  height: 20px;
+  width: 20px;
+  background-image: url("assets/Inactive.svg");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-image: url("assets/Active.svg");
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: 55px;
+  padding: 16px;
+  color: $main_design_color;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  cursor: pointer;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .slideshow-container {
+    margin: 50px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 450px;
+  }
+  #banner #tilbud {
+    margin-top: 50px;
+  }
+  #listwrapper {
+    text-align: center;
+  }
+  #listwrapper p {
+    line-height: 40px;
+  }
+  #listwrapper img {
+    margin-left: 150px;
+  }
+  #bestil {
+    margin-left: 250px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 140px;
+    margin-right: 150px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .slideshow-container {
+    margin: 50px;
+    width: 100vw;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 650px;
+  }
+  #banner #tilbud {
+    margin-top: 50px;
+  }
+  #listwrapper {
+    text-align: center;
+  }
+  #listwrapper p {
+    line-height: 25px;
+    font-size: 1em;
+  }
+  #listwrapper img {
+    margin-left: 200px;
+    width: 50px;
+  }
+  #bestil {
+    margin-left: 350px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .next,
+  .prev {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .slideshow-container {
+    margin-left: 100px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 450px;
+    margin-top: 80px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 800px;
+  }
+  .next,
+  .prev {
+    margin-top: 130px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .slideshow-container {
+    margin-left: 150px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 500px;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .slideshow-container {
+    margin-left: 200px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 550px;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .slideshow-container {
+    margin-left: 250px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 600px;
+    margin-top: 80px;
+  }
+  #subnav .first {
+    margin-left: 530px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .slideshow-container img {
+    min-width: 1300px;
+    min-height: 500px;
+    margin-left: -100px;
+  }
+  #bestil {
+    margin-left: 650px;
+    margin-top: 80px;
+  }
+  .next,
+  .prev {
+    font-size: 2em;
+    margin-top: 220px;
+  }
+  #banner #pris {
+    margin-top: 50px;
+    margin-right: 1500px;
+  }
+  main h1 {
+    margin-left: 350px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .slideshow-container {
+    margin-left: 350px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 700px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .slideshow-container {
+    margin-left: 400px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 750px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .slideshow-container {
+    margin-left: 450px;
+    width: 100vw;
+  }
+  #bestil {
+    margin-left: 800px;
+    margin-top: 80px;
+  }
 }
 
 
