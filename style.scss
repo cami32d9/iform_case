@@ -1,8 +1,19 @@
+$iform-color: #5C1182;
 $main_design_color: #68228b;
 $main_design_font: Arial, Helvetica, sans-serif;
 
+
+html {
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
 body {
   background-color: rgb(255, 255, 255);
+  //margin: 0;
+  //padding: 20px;
+  //display: grid;
+  //place-items: center;
 }
 
 header {
@@ -21,14 +32,6 @@ header {
   }
 }
 
-main {
-  #landing_h1 {
-    font-family: $main_design_font;
-    margin-left: 20px;
-    font-size: 1em;
-    margin-top: 35px;
-  }
-}
 .burgermenu li:hover {
   color: rgb(167, 101, 150);
   cursor: pointer;
@@ -38,6 +41,310 @@ main {
   display: none;
 }
 
+main {
+  //width: 100%;
+
+  #landing_h1 {
+    font-family: $main_design_font;
+    margin-left: 20px;
+    font-size: 1em;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  main {
+    width: 600px;
+  }
+}
+
+
+// ----- Progress bar -----
+
+.checkout-progress {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 20px auto;
+}
+
+.progress_bar_icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.progress_circle {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 100%;
+  //background-image: url("assets/black_circle.svg");
+  //background-size: cover;
+}
+
+.progress_icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+
+
+// ----- Checkout design -----
+
+.checkout-step {
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+
+// Invalidity
+
+input {
+  &:focus {
+    outline: 2px dashed rgba($iform-color, .2);
+  }
+}
+
+.invalidated {
+
+  input {
+    // Text fields
+    &[type="text"],
+    &[type="email"] {
+
+      &:invalid {
+        outline: 1px dashed red;
+      }
+    }
+
+    &[type="radio"] {
+      &:invalid {
+        outline: 1px dashed red;
+
+      }
+    }
+
+  //  Checkboxes
+
+    &[type=checkbox] {
+
+      &:invalid + label {
+        outline: 1px dashed red;
+        outline-offset: 3px;
+      }
+    }
+  }
+}
+
+
+// Select offer
+.select-item {
+  display: grid;
+  grid: auto / auto 1fr;
+  grid-gap: 20px;
+
+  h2 {
+    margin: 0;
+  }
+
+  select {
+    margin-top: 20px;
+  }
+
+  img {
+    max-width: 40vw;
+  }
+}
+
+.offer-price {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+// ----- Text forms -----
+
+.input_field {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px 0;
+}
+
+input {
+  &[type="text"],
+  &[type="email"] {
+    &:required:valid {
+      outline: 1px solid green;
+    }
+  }
+}
+
+label.required:after {
+  content: '*';
+  color: red;
+}
+
+// Specifically for post code + city, for flexing
+.flex-right {
+  display: flex;
+
+  .input_field:last-child {
+    margin-left: 10px;
+    flex: 1;
+  }
+}
+
+// Specifically for card number + CVV, for flexing
+.flex-left {
+  display: flex;
+
+  .input_field:first-child {
+    margin-right: 10px;
+    flex: 1;
+  }
+}
+
+
+// Radio options
+
+.radio-option {
+  display: grid;
+  grid: auto / auto 1fr;
+  place-items: center start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+
+  // Radio styling borrowed from Dannie Vinther
+  // https://codepen.io/dannievinther/pen/ab3665062927c32cfb7402d204a92c02
+
+  outline-offset: 2px;
+
+  -webkit-appearance: none;
+
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 2px solid #222;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  &:checked::after {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #0c4364;
+    border-radius: 50%;
+    content: "";
+  }
+
+}
+
+.magazine-savings {
+  color: red;
+}
+
+
+// Checkboxes
+
+.payment-term,
+.payment-option {
+  margin-bottom: 20px;
+}
+
+input {
+
+  &[type=checkbox] {
+    display: none;
+
+    &:focus + label,
+    &:active + label {
+      outline: 1px dashed lightblue;
+    }
+
+    &:checked + label:before {
+      box-shadow: inset 0 0 0 .15rem #fff;
+    }
+  }
+}
+
+label {
+
+  // Checkbox styling borrowed from Dannie Vinther
+  // https://codepen.io/dannievinther/pen/278872f571ca9f0710d797a30818038f
+
+
+  &.checkbox {
+    display: grid;
+    grid: auto / auto 1fr;
+    place-items: center start;
+    gap: .5rem;
+    user-select: none;
+    cursor: pointer;
+    margin: 20px 0;
+
+    &:before {
+      --size: 1rem;
+      content: '';
+      width: var(--size);
+      height: var(--size);
+      border: 2px solid #000;
+      background: #000;
+      box-shadow: inset 0 0 0 .5rem #fff;
+      transition: .2s;
+    }
+  }
+}
+
+
+// Buttons
+
+button {
+  cursor: pointer;
+}
+
+.checkout-button {
+  font-size: 14pt;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.forward {
+    background-color: $iform-color;
+    color: white;
+  }
+
+  &.back {
+    background-color: transparent;
+  }
+}
+
+
+// Review order
+
+.review-order {
+  h3 {
+    margin: 0 0 10px 0;
+  }
+  background-color: whitesmoke;
+  padding: 20px 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+// ----- Landingpage -----
 #bestil {
   background-color: $main_design_color;
   color: white;
@@ -421,4 +728,11 @@ body {
     margin-left: 800px;
     margin-top: 80px;
   }
+}
+
+
+// ----- Helpers -----
+
+.hidden {
+  display: none;
 }
