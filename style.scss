@@ -10,10 +10,11 @@ header {
   grid: auto / 1fr auto 1fr;
   align-items: center;
   padding: 12px 12px 60px 30px;
-  -webkit-box-shadow: 0px 6px 12px 6px rgba(204, 204, 204, 1);
-  -moz-box-shadow: 0px 6px 12px 6px rgba(204, 204, 204, 1);
-  box-shadow: 0px 6px 12px 6px rgba(204, 204, 204, 1);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
+  box-shadow: 0px 6px 5px 0px rgba(204, 204, 204, 1);
   margin-top: 0px;
+  z-index: 100;
   a {
     justify-self: center;
     grid-column: 2;
@@ -21,12 +22,16 @@ header {
 }
 
 main {
-  h1 {
+  #landing_h1 {
     font-family: $main_design_font;
     margin-left: 20px;
     font-size: large;
     margin-top: 35px;
   }
+}
+.burgermenu li:hover {
+  color: rgb(167, 101, 150);
+  cursor: pointer;
 }
 
 .burgermenu #myLinks {
@@ -46,6 +51,12 @@ main {
   font-family: $main_design_font;
   font-weight: 700;
   font-size: 17px;
+  border-radius: 2px;
+
+  img {
+    width: 20px;
+    float: right;
+  }
 }
 
 #bestil:hover {
@@ -56,17 +67,17 @@ main {
   font-family: $main_design_font;
   display: flex;
   flex-direction: row;
+  font-size: 17px;
 
   #pris {
+    color: #f36;
     margin-left: 40px;
     margin-right: 75px;
+    font-weight: 700;
   }
   #tilbud {
-    margin-left: 75px;
-  }
-  p {
-    color: #f36;
-    font-weight: 700;
+    margin-left: 95px;
+    color: rgb(14, 212, 14);
   }
 }
 
@@ -91,7 +102,7 @@ main {
   display: flex;
   position: absolute;
   color: $main_design_color;
-
+  margin-top: -10px;
   p {
     font-family: $main_design_font;
     flex-direction: row;
@@ -150,6 +161,7 @@ main {
 }
 
 #logo {
+  margin-top: -25px;
   width: 120px;
 }
 
@@ -164,6 +176,7 @@ body {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
+  margin: auto;
 }
 
 .diamond_dot {
@@ -180,19 +193,13 @@ body {
   background-image: url("assets/Active.svg");
 }
 
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: 55px;
+  margin-top: 80px;
   padding: 16px;
   color: $main_design_color;
   font-weight: bold;
@@ -212,21 +219,28 @@ body {
   cursor: pointer;
 }
 
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 @-webkit-keyframes fade {
   from {
-    left: 0px;
+    opacity: 0.6;
   }
   to {
-    left: -400px;
+    opacity: 1;
   }
 }
 
 @keyframes fade {
   from {
-    left: 0px;
+    opacity: 0.4;
   }
   to {
-    left: 200px;
+    opacity: 1;
   }
 }
 
