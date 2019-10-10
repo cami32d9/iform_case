@@ -68,38 +68,10 @@ h2 {
 // ----- Progress bar -----
 
 .checkout-progress {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 20px 15px;
-}
-#line1 {
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background-color: black;
-  overflow: hidden;
-  margin-left: 251px;
-  margin-top: 30px;
-}
-#line2 {
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background-color: black;
-  overflow: hidden;
-  margin-left: 52px;
-  margin-top: 30px;
-}
-
-#line3 {
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background-color: black;
-  overflow: hidden;
-  margin-left: 151px;
-  margin-top: 30px;
+  margin: 0 auto 20px auto;
 }
 
 .progress_bar_icon {
