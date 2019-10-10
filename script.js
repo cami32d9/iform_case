@@ -8,13 +8,14 @@ function start() {
 
     hiddenForms.forEach(form => {
         form.querySelectorAll("input").forEach(input => {
-            console.log("I should disable now");
             input.disabled = true;
         });
     });
 
+    let progressPoint = document.querySelector(`.progress_circle.basket`);
+    progressPoint.style.borderColor = "red";
+
     let currentCheckoutSection = document.querySelector("#basket");
-    console.log(currentCheckoutSection);
 
     const form = document.querySelector("form");
 
@@ -34,10 +35,7 @@ function start() {
 
                 const checkoutDestination = button.getAttribute("data-goto");
 
-                if (checkoutDestination !== "thankyou") {
-
                 goToDestination(checkoutDestination);
-                }
             }
         });
     });
@@ -55,10 +53,16 @@ function start() {
                 });
     });
 
-    function goToDestination(nextPage) {
-        console.log(nextPage);
+    function goToDestination(thisPage) {
+        console.log(thisPage);
 
-        let nextCheckoutSection = document.querySelector(`#${nextPage}`);
+
+        progressPoint.style.borderColor = "black";
+
+        progressPoint = document.querySelector(`.progress_circle.${thisPage}`);
+        progressPoint.style.borderColor = "red";
+
+        let nextCheckoutSection = document.querySelector(`#${thisPage}`);
 
         currentCheckoutSection.classList.add("hidden");
         currentCheckoutSection.querySelectorAll("input").forEach(input => {

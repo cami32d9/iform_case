@@ -7,15 +7,55 @@ html {
 
 body {
   margin: 0;
+  padding: 20px;
   display: grid;
   place-items: center;
 }
 
-form {
-  display: flex;
-  flex-basis: 600px;
-  margin: 20px;
+main {
+  width: 100%;
 }
+
+@media screen and (min-width: 640px) {
+  main {
+    width: 600px;
+  }
+}
+
+
+// ----- Progress bar -----
+
+.checkout-progress {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 20px auto;
+}
+
+.progress_bar_icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.progress_circle {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 100%;
+  //background-image: url("assets/black_circle.svg");
+  //background-size: cover;
+}
+
+.progress_icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
 
 
 // ----- Checkout design -----
@@ -85,6 +125,13 @@ input {
   }
 }
 
+.offer-price {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
 // ----- Text forms -----
 
 .input_field {
@@ -139,6 +186,10 @@ label.required:after {
 }
 
 input[type="radio"] {
+
+  // Radio styling borrowed from Dannie Vinther
+  // https://codepen.io/dannievinther/pen/ab3665062927c32cfb7402d204a92c02
+
   outline-offset: 2px;
 
   -webkit-appearance: none;
@@ -192,6 +243,10 @@ input {
 
 label {
 
+  // Checkbox styling borrowed from Dannie Vinther
+  // https://codepen.io/dannievinther/pen/278872f571ca9f0710d797a30818038f
+
+
   &.checkbox {
     display: grid;
     grid: auto / auto 1fr;
@@ -237,6 +292,19 @@ button {
   &.back {
     background-color: transparent;
   }
+}
+
+
+// Review order
+
+.review-order {
+  h3 {
+    margin: 0 0 10px 0;
+  }
+  background-color: whitesmoke;
+  padding: 20px 5px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 

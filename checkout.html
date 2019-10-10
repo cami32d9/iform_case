@@ -12,7 +12,31 @@
 </head>
 <body>
 
-<div class="checkout-progress">------------------------------</div>
+    <main>
+<div class="checkout-progress">
+
+    <div class="progress_bar_icon">
+        <div class="progress_circle basket"></div>
+        <img src="assets/cart.svg" class="progress_icon" alt="Progress bar icon - Cart">
+    </div>
+
+    <div class="progress_bar_icon">
+        <div class="progress_circle personal-information"></div>
+        <img src="assets/delivery.svg" class="progress_icon" alt="Progress bar icon - Delivery">
+    </div>
+
+    <div class="progress_bar_icon">
+
+        <div class="progress_circle payment-method card-payment"></div>
+        <img src="assets/credit-card.svg" class="progress_icon" alt="Progress bar icon - Payment">
+    </div>
+
+    <div class="progress_bar_icon">
+        <div class="progress_circle thankyou"></div>
+        <img src="assets/finished.svg" class="progress_icon" alt="Progress bar icon - Finished">
+    </div>
+
+</div>
 
 <form>
     <section class="checkout-step" id="basket">
@@ -24,6 +48,7 @@
                 <label>
                     Vælg størrelse:
                     <select>
+                        <option selected disabled hidden></option>
                         <option value="s">S</option>
                         <option value="m">M</option>
                         <option value="l">L</option>
@@ -35,11 +60,11 @@
 
         <div class="select-magazines">
 
-            <label class="required">Vælg antal magasiner</label>
             <br>
             <b>Vælg flere numre og spar mere!</b>
             <p>Jo flere numre du køber, jo flere numre får du til under halv pris.</p>
 
+            <label class="required">Vælg antal magasiner</label>
             <div class="radio-option magazines">
                 <input type="radio" id="field-magazines-1" name="magazines" value="magazines-1" required>
                 <label for="field-magazines-1">
@@ -78,8 +103,12 @@
 
         </div>
 
+        <small>
+        + 49,50 kr. i potro og ekspeditionsgebyr.
+        </small>
+
         <div class="offer-price">
-            Din pris: 487 kr.
+            Din pris: 198,50 kr.
         </div>
 
         <button class="checkout-button forward" data-goto="personal-information">Videre til bestilling</button>
@@ -201,7 +230,29 @@
             Betalingsmetode
         </h2>
 
+        <div class="review-order">
+            <h3>Oversigt</h3>
+
+            <div class="review-item">
+            ActiveFit Fiberjakke
+            </div>
+            <div class="review-size">
+            Str S
+            </div>
+
+            +
+
+            <div class="review-magazines">
+            4 nr af iFORM
+            </div>
+
+            <div class="review-price">
+            149 kr.
+            </div>
+        </div>
+
         <label class="required">Vælg betalingsmetode</label>
+
         <div class="radio-option">
             <input type="radio" id="field-payment-1" name="payment" value="payment-1" required>
             <label for="field-payment-1">
@@ -267,11 +318,11 @@
                 Hortholders navn
             </label>
             <input
-                    type="text"
-                    name="details-cardholder"
-                    id="field-cardholder"
-                    placeholder="Kortholders navn"
-                    required
+                type="text"
+                name="details-cardholder"
+                id="field-cardholder"
+                placeholder="Kortholders navn"
+                required
             >
         </div>
 
@@ -283,15 +334,15 @@
                     Kortnummer
                 </label>
                 <input
-                        type="text"
-                        name="details-cardnumber"
-                        id="field-cardnumber"
-                        placeholder="Kortnummer"
-                        minlength="16"
-                        maxlength="16"
-                        size="16"
-                        pattern="[0-9]*"
-                        required
+                    type="text"
+                    name="details-cardnumber"
+                    id="field-cardnumber"
+                    placeholder="Kortnummer"
+                    minlength="16"
+                    maxlength="16"
+                    size="16"
+                    pattern="[0-9]*"
+                    required
                 >
             </div>
 
@@ -301,15 +352,15 @@
                     Kontrolcifre
                 </label>
                 <input
-                        type="text"
-                        name="details-cvv"
-                        id="field-cvv"
-                        placeholder="Kontrolcifre"
-                        minlength="3"
-                        maxlength="3"
-                        size="3"
-                        pattern="[0-9]*"
-                        required
+                    type="text"
+                    name="details-cvv"
+                    id="field-cvv"
+                    placeholder="Kontrolcifre"
+                    minlength="3"
+                    maxlength="3"
+                    size="3"
+                    pattern="[0-9]*"
+                    required
                 >
             </div>
         </div>
@@ -345,14 +396,18 @@
             </label>
         </div>
 
-            <button class="checkout-button forward" data-goto="thankyou">
-                    Bekræft betaling
-            </button>
+        <button class="checkout-button forward" data-goto="thankyou">
+            Bekræft betaling
+        </button>
         <button class="checkout-button back" data-goto="payment-method">Gå tilbage</button>
 
     </section>
+    <section class="checkout-step hidden" id="thankyou">
+             <h2>Tak for din bestilling!</h2>
+        <a href="index.html">Tilbage til forsiden</a>
+    </section>
 </form>
-
+    </main>
 <script src="script.js"></script>
 
 </body>
