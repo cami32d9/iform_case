@@ -48,7 +48,7 @@
         <div class="progress_circle thankyou"></div>
         <img src="assets/finished.svg" class="progress_icon" alt="Progress bar icon - Finished">
     </div>
-
+  
 </div>
 
 <form>
@@ -57,7 +57,7 @@
         <div class="select-item">
             <img src="assets/jacket_offer.jpg" alt="Billede af ActiveFit Fiberjakke, som indgår i tilbudet.">
             <div class="select-item-details">
-                <h2>ActiveFit Fiberjakke</h2>
+                <h1>ActiveFit Fiberjakke</h1>
                 <label>
                     Vælg størrelse:
                     <select>
@@ -124,7 +124,8 @@
             Din pris: 198,50 kr.
         </div>
 
-        <button class="checkout-button forward" data-goto="personal-information">Videre til bestilling</button>
+        <button class="checkout-button forward" data-goto="personal-information">Videre til bestilling
+            <img src="assets/right-arrow.svg" style="width: 25px; float: right;"></button>
 
     </section>
     <section class="checkout-step hidden" id="personal-information">
@@ -197,7 +198,7 @@
                 <label for="field-city" class="required">
                     By
                 </label>
-                <input type="text" name="details-city" id="field-city" placeholder="Din by" required>
+                <input type="text" name="details-city" id="field-city" style="width: 140px;" placeholder="Din by" required>
             </div>
         </div>
 
@@ -234,7 +235,8 @@
                    pattern="[0-9]*">
         </div>
 
-        <button class="checkout-button forward" data-goto="payment-method">Vælg betalingsmetode</button>
+        <button class="checkout-button forward" data-goto="payment-method">Vælg betalingsmetode
+        <img src="assets/right-arrow.svg" style="width: 25px; float: right;"></button>
         <button class="checkout-button back" data-goto="basket">Gå tilbage</button>
 
     </section>
@@ -318,7 +320,8 @@
         </div>
 
 
-        <button class="checkout-button forward" data-goto="card-payment">Videre til betaling</button>
+        <button class="checkout-button forward" data-goto="card-payment">Videre til betaling
+        <img src="assets/right-arrow.svg" style="width: 25px; float: right;"></button>
         <button class="checkout-button back" data-goto="personal-information">Gå tilbage</button>
 
     </section>
@@ -328,7 +331,7 @@
         <!-- CARD HOLDER -->
         <div class="input_field">
             <label for="field-cardholder" class="required">
-                Hortholders navn
+                Kortholders navn
             </label>
             <input
                 type="text"
@@ -410,7 +413,7 @@
         </div>
 
         <button class="checkout-button forward" data-goto="thankyou">
-            Bekræft betaling
+            Bekræft betaling<img src="assets/right-arrow.svg" style="width: 25px; float: right;">
         </button>
         <button class="checkout-button back" data-goto="payment-method">Gå tilbage</button>
 
